@@ -32,3 +32,11 @@ Initié au lycée Léonard de Vinci - 77000 Melun
 ### Point d'entrée
 
 ![copie ecran](./images/projet-attendus.png)
+
+
+
+changements :
+
+- definir une taille minimum pour les cases des tableaux
+
+- refaire la page pour les details pour les pays 

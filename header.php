@@ -11,7 +11,15 @@
  * @license   http://opensource.org/licenses/gpl-license.php GNU Public License
  * @link      https://github.com/sio-melun/geoworld
  */
-?><!doctype html>
+?>
+
+<?php
+require_once('inc/manager-db.php');
+$continents = getContinents();
+$lespays = getAllCountries()
+?>
+
+<!doctype html>
 <html lang="fr" class="h-100">
 <head>
   <meta charset="utf-8">
@@ -58,12 +66,12 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-             aria-expanded="false">Dropdown</a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+              <?php foreach ($continents as $continent): ?>
+                <a class="dropdown-item" href="index2.php?name=<?= $continent->Continent ?>">
+                  <?= $continent->Continent ?></a>
+              <?php endforeach; ?>
           </div>
         </li>
       </ul>

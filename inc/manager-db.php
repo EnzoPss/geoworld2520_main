@@ -60,3 +60,20 @@ function getAllCountries()
     $query = 'SELECT * FROM Country;';
     return $pdo->query($query)->fetchAll();
 }
+
+function getContinents()
+{
+    global $pdo;
+    $query = 'SELECT DISTINCT Continent FROM Country;';
+    return $pdo->query($query)->fetchAll();
+}
+
+function getCapitale($num) {
+     global $pdo;
+     $query = 'SELECT Name FROM City WHERE id = :num;';
+     $prep = $pdo->prepare($query);
+     $prep->bindValue(':num', $num, PDO::PARAM_INT);
+     $prep->execute();
+ 
+     return $prep->fetch();
+}
