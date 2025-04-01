@@ -77,3 +77,13 @@ function getCapitale($num) {
  
      return $prep->fetch();
 }
+
+function getInfo($id) {
+    global $pdo;
+    $query = 'SELECT * FROM Country WHERE id = :id;';
+    $prep = $pdo->prepare($query);
+    $prep->bindValue(':id', $id, PDO::PARAM_INT);
+    $prep->execute();
+
+    return $prep->fetch();
+}

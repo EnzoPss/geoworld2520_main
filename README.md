@@ -33,10 +33,7 @@ Initié au lycée Léonard de Vinci - 77000 Melun
 
 ![copie ecran](./images/projet-attendus.png)
 
-
-
-changements :
-
-- definir une taille minimum pour les cases des tableaux
-
-- refaire la page pour les details pour les pays 
+changements à faire :
+- pourvoir acceder aux menu continents/pays depuis la page d'info des pays
+- mettre en formes les infos des pays + essayer d'implementer les changements d'info de la page
+- faire le search pays dans le header

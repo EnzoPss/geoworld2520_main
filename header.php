@@ -40,6 +40,12 @@ $lespays = getAllCountries()
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+
+    .dropdown-menu {
+      max-height: 400px;
+      overflow-y: auto;
+      }
+
     }
   </style>
   <!-- Custom styles for this template -->
@@ -56,17 +62,21 @@ $lespays = getAllCountries()
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
+
         <li class="nav-item active">
           <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Continents</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
               <?php foreach ($continents as $continent): ?>
                 <a class="dropdown-item" href="index2.php?name=<?= $continent->Continent ?>">
@@ -74,6 +84,17 @@ $lespays = getAllCountries()
               <?php endforeach; ?>
           </div>
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pays</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown02">
+              <?php foreach ($lespays as $pays): ?>
+                <a class="dropdown-item" href="detailsPays.php?name=<?= $pays->id ?>">
+                  <?= $pays->Name; ?> </a>
+              <?php endforeach; ?>
+          </div>
+        </li>
+
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">

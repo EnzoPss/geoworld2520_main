@@ -39,17 +39,21 @@
        <?php
        // $desPays est un tableau dont les éléments sont des objets représentant
        // des caractéristiques d'un pays (en relation avec les colonnes de la table Country)
-        foreach ($desPays as $pays) { ?>
+        foreach ($desPays as $pays): ?>
           <tr>
             <td> <?php echo $pays->Name ?></td>
 
             <td> <?php echo $pays->Population ?></td>
 
-            <td> <?php echo getCapitale($pays->Capital)->Name ?></td>
-
+            <?php if (!empty(getCapitale($pays->Capital))):?>
+              <td> <?php echo getCapitale($pays->Capital)->Name ?></td>
+            <?php else :?>
+              <td><i> <?php echo "---Pas de capitale---" ?> </i>
+            <?php endif ?>
+            
             <td> <?php echo $pays->SurfaceArea ?></td>
           </tr>
-        <?php } ?>
+        <?php endforeach ?>
      </table>
     </div>
   </div>
