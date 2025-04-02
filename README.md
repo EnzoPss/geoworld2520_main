@@ -32,8 +32,3 @@ Initié au lycée Léonard de Vinci - 77000 Melun
 ### Point d'entrée
 
 ![copie ecran](./images/projet-attendus.png)
-
-changements à faire :
-- pourvoir acceder aux menu continents/pays depuis la page d'info des pays
-- mettre en formes les infos des pays + essayer d'implementer les changements d'info de la page
-- faire le search pays dans le header
