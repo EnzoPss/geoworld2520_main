@@ -34,7 +34,11 @@ if (isset($_GET['name']) && !empty($_GET['name'])) {
             <td> <?php echo $pays->Code ?> </td>
             <td> <?php echo $pays->Continent ?> </td>
 
-            <td> <?php echo getCapitale($pays->Capital)->Name ?> </td>
+            <?php if (!empty(getCapitale($pays->Capital))):?>
+              <td> <?php echo getCapitale($pays->Capital)->Name ?></td>
+            <?php else :?>
+              <td><i> <?php echo "---Pas de capitale---" ?> </i>
+            <?php endif ?>
 
             <td> <?php echo $pays->Population ?> </td>
             <td> <?php echo $pays->SurfaceArea ?> </td>
