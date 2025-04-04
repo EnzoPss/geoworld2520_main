@@ -87,3 +87,22 @@ function getInfo($id) {
 
     return $prep->fetch();
 }
+
+
+function getVillesPays($id) {
+    global $pdo;
+     $query = 'SELECT * FROM City WHERE idCountry = :num;';
+     $prep = $pdo->prepare($query);
+     $prep->bindValue(':num', $id, PDO::PARAM_INT);
+     $prep->execute();
+ 
+     return $prep->fetchAll();
+}
+
+
+
+function test($arg) {
+    echo "<pre>";
+    print_r($arg);
+    echo "</pre>";
+}

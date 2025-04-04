@@ -7,8 +7,6 @@ if (isset($_GET['name']) && !empty($_GET['name'])) {
 
 }
 
-var_dump($pays)
-
 ?>
 
 <main role="main" class="flex-shrink-0"></main>
@@ -43,6 +41,8 @@ var_dump($pays)
         </tr>
 
     </table>
+
+    <a href="villesPays.php?id=<?php echo $pays->id?>"><button type="button" class="btn btn-primary mt-auto w-100">Villes</button></a>
 
 </div>
 
